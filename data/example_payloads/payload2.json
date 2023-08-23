@@ -34,7 +34,7 @@
       "type": "turbojet",
       "efficiency": 0.3,
       "pmin": 0,
-      "pmax": 16
+      "pmax": 16Fuels
     },
     {
       "name": "windpark1",
