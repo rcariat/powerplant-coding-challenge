@@ -1,7 +1,14 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 
 from app.db.models import Payload
 from app.api import api
+
+import logging
+
+logging.basicConfig(filename='app.log',
+                    filemode='w',
+                    level=logging.ERROR,
+                    format='%(name)s - %(levelname)s - %(message)s')
 
 app = FastAPI()
 

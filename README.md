@@ -51,3 +51,9 @@ docker-compose exec app pytest tests/test.py
 ```
 http://127.0.0.1:8888/docs
 ```
+
+## TO DO
+
+- Gradient descent method (define cost function, select initial state + steps strategy + eps -> local min or global min if convex & smooth)
+- More tests
+- 
