@@ -61,7 +61,6 @@ def test_create_answer():
       ]
     }
 
-    body = json.dumps(body)
     response = client.post('/productionplan', json=body)
     assert response.status_code == 200
     assert response.json() == []

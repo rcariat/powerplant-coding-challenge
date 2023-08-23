@@ -8,7 +8,7 @@
 ## Clone the project
 
 ```
-git clone https://github.com/marciovrl/fastapi-example.git
+git clone https://github.com/rcariat/powerplant-coding-challenge.git
 ```
 
 ## Run local
@@ -28,7 +28,7 @@ uvicorn app.main:app --reload --port 8888
 ### Run test
 
 ```
-pytest app/test.py
+pytest tests/test.py
 ```
 
 ## Run with docker
@@ -42,17 +42,11 @@ docker-compose up -d --build
 ### Run test
 
 ```
-docker-compose exec app pytest test/test.py
+docker-compose exec app pytest tests/test.py
 ```
 
 ## API documentation (provided by Swagger UI)
 
 ```
 http://127.0.0.1:8888/docs
-```
-
-### Run server
-
-```
-docker-compose exec db psql --username=fastapi --dbname=fastapi_dev
 ```

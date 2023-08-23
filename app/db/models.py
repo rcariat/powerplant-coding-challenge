@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List
 
 class Powerplants(BaseModel):
@@ -9,10 +9,10 @@ class Powerplants(BaseModel):
     pmax: int
 
 class Fuels(BaseModel):
-    gas: float
-    kerosine: float
-    co2: int
-    wind: int
+    gas: float = Field(alias="gas(euro/MWh)")
+    kerosine: float = Field(alias="kerosine(euro/MWh)")
+    co2: int = Field(alias="co2(euro/ton)")
+    wind: int = Field(alias="wind(%)")
 
 class Payload(BaseModel):
     load: int
