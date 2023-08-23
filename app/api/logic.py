@@ -30,17 +30,11 @@ class UnitCommitmentOptimizer:
             if current_load == 0:
                 response.append(PowerPlantResponse(name=pp.name, p=0))
                 continue
-            if pp.type == "windturbine":
-                production_coeff = fuels.wind / 100
-            else:
-                production_coeff = 1 / pp.efficiency
 
-            energy_max = pp.pmax * production_coeff
-
+            energy_max = pp.pmax * fuels.wind / 100 if pp.type == "windturbine" else pp.pmax
             if current_load < energy_max:
-                energy_min = pp.pmin * production_coeff
-                response.append(PowerPlantResponse(name=pp.name, p=round(max(current_load, energy_min), 2)))
-                current_load -= max(current_load, energy_min)
+                response.append(PowerPlantResponse(name=pp.name, p=round(max(current_load, pp.pmin), 2)))
+                current_load -= max(current_load, pp.pmin)
             else:
                 response.append(PowerPlantResponse(name=pp.name, p=round(energy_max, 2)))
                 current_load -= energy_max

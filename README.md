@@ -1,9 +1,10 @@
-# Powerplant coding challenge
+# Robin Cariat's powerplant coding challenge
 
 
 ## Preconditions:
 
 - Python 3
+- Docker
 
 ## Clone the project
 
