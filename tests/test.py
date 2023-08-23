@@ -7,7 +7,7 @@ client = TestClient(app)
 
 def test_create_answer():
     body = {
-      "load": 480,
+      "load": 910,
       "fuels":
       {
         "gas(euro/MWh)": 13.4,
@@ -63,5 +63,30 @@ def test_create_answer():
 
     response = client.post('/productionplan', json=body)
     assert response.status_code == 200
-    assert response.json() == []
+    assert response.json() == [
+        {
+            "name": "windpark1",
+            "p": 90.0
+        },
+        {
+            "name": "windpark2",
+            "p": 21.6
+        },
+        {
+            "name": "gasfiredbig1",
+            "p": 460.0
+        },
+        {
+            "name": "gasfiredbig2",
+            "p": 338.4
+        },
+        {
+            "name": "gasfiredsomewhatsmaller",
+            "p": 0.0
+        },
+        {
+            "name": "tj1",
+            "p": 0.0
+        }
+    ]
 

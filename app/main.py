@@ -11,7 +11,6 @@ def root():
     return {"message": "I am G-Root. Try another route."}
 
 @app.post("/productionplan")
-def create_answer(payload: Payload):
-    payload = payload.model_dump()
+def create_response(payload: Payload):
 
-    return api.create_answer(payload)
+    return api.create_response(payload)

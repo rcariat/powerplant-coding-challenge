@@ -11,7 +11,7 @@ class Powerplants(BaseModel):
 class Fuels(BaseModel):
     gas: float = Field(alias="gas(euro/MWh)")
     kerosine: float = Field(alias="kerosine(euro/MWh)")
-    co2: int = Field(alias="co2(euro/ton)")
+    CO2: int = Field(alias="co2(euro/ton)")
     wind: int = Field(alias="wind(%)")
 
 class Payload(BaseModel):
@@ -19,9 +19,6 @@ class Payload(BaseModel):
     fuels: Fuels
     powerplants: List[Powerplants]
 
-class Answer(BaseModel):
+class PowerPlantResponse(BaseModel):
     name: str
     p: float
-
-class Response(BaseModel):
-    answers: List[Answer]
